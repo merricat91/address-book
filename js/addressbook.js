@@ -9,7 +9,7 @@ const alphabetContactList = {
 };
 
 for (let prop in alphabetContactList){
-    $('#contactDirectory').append(`<li class='${prop}Letter'>${prop}<ol></ol></li>`);
+    $('#contactDirectory').append(`<li class='${prop}Letter letter'>${prop}<ol></ol></li>`);
 };
 
 

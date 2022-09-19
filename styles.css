@@ -47,10 +47,11 @@ li {
     padding: 0.5rem;
 }
 
+
 li.letter {
     border-bottom: solid salmon 1px;
    
-}
+} 
 
 ul.contactInfoListing li {
    padding: 0;
