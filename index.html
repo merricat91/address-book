@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Address Book</title>
+</head>
+
+<body>
+    <main>
+        
+        <header>
+            <h1>My Address Book</h1>
+            <img src="img/phone.png">
+        </header>
+        
+        <div role = "Search">
+            <input type =text placeholder ="Search for a contact...">
+            <button>Search</button>
+        </div>
+            <button type="button" id="addContact">+ Add a contact</button>    
+
+        <form>
+            <label for="newFname">First Name:</label>
+            <input type ="text" id="newFname">
+            <label for="newLname">Last Name:</label>
+            <input type ="text" id="newLname">
+            <label for="newPhone">Telephone Number:</label>
+            <input type ="tel" id="newPhone">
+            <label for="newAddress">Address:</label>
+            <textarea id="newAddress"></textarea>
+
+            <button type="button" id="submitContact">Add Contact</button>
+            <button type="button" id="cancel">Cancel</button>
+           
+        </form>
+
+        <ol id="contactDirectory" type = 'A'>
+            <!-- <li class="letter">A
+                <ol>
+                    <li class="contactNameListing">Jennifer Aniston
+                        <ul class = "contactInfoListing">
+                            <li>Phone number</li>
+                            <li>Address</li>
+                        </ul>
+                    </li>
+                </ol>
+            </li>
+            <li class="letter">B 
+                <ol>
+                    <li class="contactNameListing">Drew Barrymore</li>
+                </ol>
+            </li>
+            <li class="letter">C
+                <ol>
+                    <li class="contactNameListing">James Cameron</li>
+                </ol>
+            </li> -->
+        </ol>
+
+    </main>
+
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script src="js/addressbook.js"></script>
+</body>
+</html>
