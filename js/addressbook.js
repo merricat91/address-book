@@ -9,13 +9,11 @@ const alphabetContactList = {
 };
 
 for (let prop in alphabetContactList){
-    $('#contactDirectory').append(`<li>${prop}<ol></ol></li>`);
+    $('#contactDirectory').append(`<li class='${prop}Letter'>${prop}<ol></ol></li>`);
 };
 
-// Search function
 
-
-// Show and hide add a contact form
+// Show and hide add contact form
 $('form').hide();
 $('.contactInfoListing').hide();
 
@@ -24,15 +22,14 @@ $('#addContact').click(function() {
 }
 );
 
-// Cancel and clear the form
-
 $('#cancel').click(function() {
     document.querySelector("form").reset();
     $('form').hide();
 }
 );
 
-// Add function for creating new variables from inputs and put inside click: $('#submitContact').click();
+// Collect inputs and save into an object
+
 $('#submitContact').click(function() {
     const newContact = {
         firstName: undefined,
@@ -47,9 +44,19 @@ $('#submitContact').click(function() {
     newContact.address = $('#newAddress').val();
     console.log(newContact);
 
-    let addContact = $(`<li>${newContact.firstName} ${newContact.lastName}</li>`);
-    $('.letter').append(addContact);
-
+    let addContact = $(`<li>${newContact.firstName} ${newContact.lastName}
+        <ul>
+        <li>${newContact.phoneNumber}, ${newContact.address}</li>
+        </ul>
+    </li>`);
+    
+        for (let prop in alphabetContactList){
+            if (newContact.lastName.charAt(0).toUpperCase() === prop) {
+                $(`.${prop}Letter`).append(addContact);
+        };
+        }
+    
+    //$('.letter').append(addContact);
 
 }
 );
