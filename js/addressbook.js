@@ -44,9 +44,8 @@ $('#submitContact').click(function() {
     newContact.address = $('#newAddress').val();
     console.log(newContact);
 
-    let addContact = $(`<li>${newContact.firstName} ${newContact.lastName}
-        <ul>
-        <li>${newContact.phoneNumber}, ${newContact.address}</li>
+    let addContact = $(`<ul><li>${newContact.firstName} ${newContact.lastName}: ${newContact.phoneNumber}, ${newContact.address}</li>
+        <button id="deleteContact">Delete</button>
         </ul>
     </li>`);
     
@@ -55,13 +54,22 @@ $('#submitContact').click(function() {
                 $(`.${prop}Letter`).append(addContact);
         };
         }
-    
-    //$('.letter').append(addContact);
 
+       
+        document.querySelector("form").reset();
 }
+
+
+
 );
 
 
 
-
 // Delete a contact function
+
+// CITATION - I used an adapted version of the code in this answer to make the delete button work: https://stackoverflow.com/questions/63694112/how-to-remove-a-created-li-by-clicking-on-button-with-jquery
+
+$('ol').on("click", "#deleteContact", function(e){
+    $(e.target).parent('ul').remove();
+}
+);
