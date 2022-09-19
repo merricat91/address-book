@@ -50,8 +50,13 @@ li {
 
 li.letter {
     border-bottom: solid salmon 1px;
-   
+   font-weight: bold;
 } 
+
+li.contactDetails {
+  font-weight: lighter;
+  font-style: italic;
+}
 
 ul.contactInfoListing li {
    padding: 0;

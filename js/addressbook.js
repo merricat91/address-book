@@ -44,7 +44,7 @@ $('#submitContact').click(function() {
     newContact.address = $('#newAddress').val();
     console.log(newContact);
 
-    let addContact = $(`<ul><li>${newContact.firstName} ${newContact.lastName}: ${newContact.phoneNumber}, ${newContact.address}</li>
+    let addContact = $(`<ul><li class="contactDetails">${newContact.firstName} ${newContact.lastName}: ${newContact.phoneNumber}, ${newContact.address}</li>
         <button id="deleteContact">Delete</button>
         </ul>
     </li>`);
@@ -55,8 +55,9 @@ $('#submitContact').click(function() {
         };
         }
 
-       
+  // Write this code snippet as a function because you use it twice!     
         document.querySelector("form").reset();
+        $('form').hide();
 }
 
 
