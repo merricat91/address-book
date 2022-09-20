@@ -14,6 +14,7 @@ for (let prop in alphabetContactList){
 
 
 // Show and hide add contact form
+
 $('form').hide();
 $('.contactInfoListing').hide();
 
@@ -29,6 +30,10 @@ $('#cancel').click(function() {
 );
 
 // Collect inputs and save into an object
+/* new code */
+const contactArray = [
+
+];
 
 $('#submitContact').click(function() {
     const newContact = {
@@ -42,22 +47,51 @@ $('#submitContact').click(function() {
     newContact.lastName = $('#newLname').val();
     newContact.phoneNumber = $('#newPhone').val();
     newContact.address = $('#newAddress').val();
-    console.log(newContact);
 
-    let addContact = $(`<ul><li class="contactDetails">${newContact.firstName} ${newContact.lastName}: ${newContact.phoneNumber}, ${newContact.address}</li>
+    /* New code - adds each new contact to an array and sorts the array alphabetically */
+  
+    contactArray.push(newContact);
+
+      // Citation for function compare code: https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+
+    function compare( a, b ) {
+        if ( a.lastName < b.lastName ){
+          return -1;
+        }
+        if ( a.lastName > b.lastName ){
+          return 1;
+        }
+        return 0;
+      }
+      
+      contactArray.sort( compare );
+
+      /* End new code */
+
+    for (let i = 0; i < contactArray.length; i++) {
+
+    /* let addContact = $(`<ul><li class="contactDetails">${contactArray[i].firstName} ${contactArray[i].lastName}: ${contactArray[i].phoneNumber}, ${contactArray[i].address}</li>
         <button id="deleteContact">Delete</button>
         </ul>
-    </li>`);
+    </li>`); */
     
-        for (let prop in alphabetContactList){
-            if (newContact.lastName.charAt(0).toUpperCase() === prop) {
-                $(`.${prop}Letter`).append(addContact);
-        };
+       for (let prop in alphabetContactList){
+            if (contactArray[i].lastName.charAt(0).toUpperCase() === prop) {
+                $(`.${prop}Letter ol`).empty();
+                for (let i = 0; i < contactArray.length; i ++) 
+                if (contactArray[i].lastName.charAt(0).toUpperCase() === prop) {{
+                    $(`.${prop}Letter ol`).append(`<li>${contactArray[i].firstName} ${contactArray[i].lastName} <button id="deleteContact">Delete</button></li>`);
+                }
+            } }
+        }
+
         }
 
   // Write this code snippet as a function because you use it twice!     
         document.querySelector("form").reset();
         $('form').hide();
+
+        
 }
 
 
@@ -67,10 +101,10 @@ $('#submitContact').click(function() {
 
 
 // Delete a contact function
-
+$('ol').on("click", "#deleteContact", function(e){
+    $(e.target).parent().remove();
+    contactArray.splice(this,1);
+ }
+);
 // CITATION - I used an adapted version of the code in this answer to make the delete button work: https://stackoverflow.com/questions/63694112/how-to-remove-a-created-li-by-clicking-on-button-with-jquery
 
-$('ol').on("click", "#deleteContact", function(e){
-    $(e.target).parent('ul').remove();
-}
-);
