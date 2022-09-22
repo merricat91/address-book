@@ -112,11 +112,11 @@ $('ol').on("click", "#deleteContact", function(e){
 
 // Search - doesn't work yet - try looping through the array and checking each element/object?
 $('#searchButton').click(function () {
-    const search = $('#searchInput').val();
+    const search = $('#searchInput').val().toUpperCase();
 
     for (let i = 0; i < contactArray.length; i++) {
 
-    if (contactArray[i].firstName.includes(search)) {
+    if (contactArray[i].firstName.toUpperCase().includes(search)) {
         alert(`Contact found: ${contactArray[i].firstName} ${contactArray[i].lastName}`);
         break;
     } else {
