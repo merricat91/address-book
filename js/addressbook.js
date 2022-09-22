@@ -118,8 +118,10 @@ $('#searchButton').click(function () {
 
     if (contactArray[i].firstName.includes(search)) {
         alert(`Contact found: ${contactArray[i].firstName} ${contactArray[i].lastName}`);
+        break;
     } else {
         alert('No contacts found.');
+        break;
     }
 }
 });
