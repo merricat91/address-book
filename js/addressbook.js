@@ -101,10 +101,25 @@ $('#submitContact').click(function() {
 
 
 // Delete a contact function
+
+// CITATION - I used an adapted version of the code in this answer to make the delete button work: https://stackoverflow.com/questions/63694112/how-to-remove-a-created-li-by-clicking-on-button-with-jquery
+
 $('ol').on("click", "#deleteContact", function(e){
     $(e.target).parent().remove();
     contactArray.splice(this,1);
  }
 );
-// CITATION - I used an adapted version of the code in this answer to make the delete button work: https://stackoverflow.com/questions/63694112/how-to-remove-a-created-li-by-clicking-on-button-with-jquery
 
+// Search - doesn't work yet - try looping through the array and checking each element/object?
+$('#searchButton').click(function () {
+    const search = $('#searchInput').val();
+
+    for (let i = 0; i < contactArray.length; i++) {
+
+    if (contactArray[i].firstName.includes(search)) {
+        alert(`Contact found: ${contactArray[i].firstName} ${contactArray[i].lastName}`);
+    } else {
+        alert('No contacts found.');
+    }
+}
+});
