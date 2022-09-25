@@ -15,7 +15,7 @@ for (let prop in alphabetContactList){
 };
 
 
-// Show and hide add contact form
+// Show and hide the add-contact form
 
 $('form').hide();
 $('.contactInfoListing').hide();
@@ -31,24 +31,20 @@ $('#cancel').click(function() {
 }
 );
 
-// Collect inputs and save into an object
-/* new code */
+// Collects form  input values and stores them as objects in an array
+
 const contactArray = [
 
 ];
 
 $('#submitContact').click(function() {
     const newContact = {
-        firstName: undefined,
-        lastName: undefined,
-        phoneNumber: undefined,
-        address: undefined
+        firstName: $('#newFname').val(),
+        lastName: $('#newLname').val(),
+        phoneNumber: $('#newPhone').val(),
+        address: $('#newAddress').val()
     };
     
-    newContact.firstName = $('#newFname').val();
-    newContact.lastName = $('#newLname').val();
-    newContact.phoneNumber = $('#newPhone').val();
-    newContact.address = $('#newAddress').val();
 
     /* New code - adds each new contact to an array and sorts the array alphabetically */
   
@@ -115,6 +111,8 @@ $('ol').on("click", "#deleteContact", function(e){
 // Search - doesn't work yet - try looping through the array and checking each element/object?
 $('#searchButton').click(function () {
     const search = $('#searchInput').val().toUpperCase();
+
+    if(contactArray.length == 0){alert("No contacts found - your address book is empty");}
 
     for (let i = 0; i < contactArray.length; i++) {
 
