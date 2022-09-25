@@ -119,7 +119,11 @@ $('#searchButton').click(function () {
     if (contactArray[i].firstName.toUpperCase().includes(search)) {
         alert(`Contact found: ${contactArray[i].firstName} ${contactArray[i].lastName}`);
         break;
-    } else {
+    } else if (contactArray[i].lastName.toUpperCase().includes(search)){
+        alert(`Contact found: ${contactArray[i].firstName} ${contactArray[i].lastName}`);
+        break;
+    }
+    else {
         alert('No contacts found.');
         break;
     }
