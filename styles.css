@@ -53,7 +53,7 @@ li.letter {
    font-weight: bold;
 } 
 
-li.contactDetails {
+.phoneAddress {
   font-weight: lighter;
   font-style: italic;
 }

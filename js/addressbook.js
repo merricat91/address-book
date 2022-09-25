@@ -80,7 +80,7 @@ $('#submitContact').click(function() {
                 $(`.${prop}Letter ol`).empty();
                 for (let i = 0; i < contactArray.length; i ++) 
                 if (contactArray[i].lastName.charAt(0).toUpperCase() === prop) {{
-                    $(`.${prop}Letter ol`).append(`<li>${contactArray[i].firstName} ${contactArray[i].lastName} <button id="deleteContact">Delete</button></li>`);
+                    $(`.${prop}Letter ol`).append(`<li>${contactArray[i].firstName} ${contactArray[i].lastName}<br><span class="phoneAddress">${contactArray[i].phoneNumber}<br>${contactArray[i].address}</span> <button id="deleteContact">Delete</button></li>`);
                 }
             } }
         }
