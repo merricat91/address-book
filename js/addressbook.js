@@ -2,10 +2,12 @@
 // Generate alphabetical contact list
 
 const alphabetContactList = {
-    A: undefined,
-    B: undefined,
-    C: undefined,
-    D: undefined
+    A: undefined, B: undefined, C: undefined, D: undefined, E: undefined,
+    F: undefined, G: undefined, H: undefined, I: undefined, J: undefined,
+    K: undefined, L: undefined, M: undefined, N: undefined, O: undefined,
+    P: undefined, Q: undefined, R: undefined, S: undefined, T: undefined,
+    U: undefined, V: undefined, W: undefined, X: undefined, Y: undefined,
+    Z: undefined
 };
 
 for (let prop in alphabetContactList){
