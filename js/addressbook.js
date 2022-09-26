@@ -18,7 +18,6 @@ for (let prop in alphabetContactList){
 // Show and hide the add-contact form
 
 $('form').hide();
-$('.contactInfoListing').hide();
 
 $('#addContact').click(function() {
     $('form').show();
@@ -79,7 +78,7 @@ $('#submitContact').click(function() {
                 $(`.${prop}Letter ol`).empty();
                 for (let i = 0; i < contactArray.length; i ++) 
                 if (contactArray[i].lastName.charAt(0).toUpperCase() === prop) {{
-                    $(`.${prop}Letter ol`).append(`<li>${contactArray[i].firstName} ${contactArray[i].lastName}<br><span class="phoneAddress">${contactArray[i].phoneNumber}<br>${contactArray[i].address}</span> <button id="deleteContact">Delete</button></li>`);
+                    $(`.${prop}Letter ol`).append(`<li class='contactListing'>${contactArray[i].firstName} ${contactArray[i].lastName}<br><span class="phoneAddress">${contactArray[i].phoneNumber}<br>${contactArray[i].address}</span> <button id="deleteContact">Delete</button></li>`);
                 }
             } }
         }
