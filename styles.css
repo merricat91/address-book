@@ -62,7 +62,15 @@ ul.contactInfoListing li {
    padding: 0;
 }
 
+/* delete  */
+#deleteContact {
+  font-size: 0.5em;
+  opacity: 0.5;
+}
 
+#deleteContact:hover {
+  opacity: 1;
+}
 
 /* form */
 
