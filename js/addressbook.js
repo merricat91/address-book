@@ -25,7 +25,7 @@ $('#addContact').click(function() {
 );
 
 function hideReset() {
-    document.querySelector("form").reset();
+   document.querySelector("form").reset();
     $('form').hide();}
 
 $('#cancel').click(function(){
@@ -126,7 +126,9 @@ alert(`Contact found:\n${searchResults[i].firstName} ${searchResults[i].lastName
 else {
     alert('No contacts found.');
 }
+
 }
+
 )
   /*
 
