@@ -1,11 +1,4 @@
-/* This mini css reset was taken from this blog post https://hashnode.com/post/how-to-write-clean-css-and-best-practices-ckpnh4lsj05mc5ws13d8agy92 */
-/*
-* {
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-*/
+
 body {
   background-color: rgb(66, 158, 166);
 }
@@ -22,7 +15,6 @@ main {
 }
 
 input, textarea {
-  /*background-color: rgb(22, 244, 208, 0.1);*/
   background-color: rgb(250, 128, 114, 0.2);
 }
 
@@ -49,8 +41,6 @@ h1 {
 
 ol {
     padding-left: 0;
-  
-    /* text-align: center; */
 }
 
 li {
@@ -106,76 +96,3 @@ form {
     margin-bottom: 8px;
     font-size: small;
   }
-
-/* look at this later... 
-
-input[type="text"],
-input[type="password"],
-input[type="date"],
-input[type="datetime"],
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="time"],
-input[type="url"],
-textarea,
-select {
-  background: rgba(255,255,255,0.1);
-  border: none;
-  font-size: 16px;
-  height: auto;
-  margin: 0;
-  outline: 0;
-  padding: 15px;
-  width: 100%;
-  background-color: #e8eeef;
-  color: #8a97a0;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-  margin-bottom: 30px;
-}
-
-input[type="radio"],
-input[type="checkbox"] {
-  margin: 0 4px 8px 0;
-}
-
-select {
-  padding: 6px;
-  height: 32px;
-  border-radius: 2px;
-}
-
-button {
-  padding: 19px 39px 18px 39px;
-  color: #FFF;
-  background-color: #4bc970;
-  font-size: 18px;
-  text-align: center;
-  font-style: normal;
-  border-radius: 5px;
-  width: 100%;
-  border: 1px solid #3ac162;
-  border-width: 1px 1px 3px;
-  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-  margin-bottom: 10px;
-}
-
-fieldset {
-  margin-bottom: 30px;
-  border: none;
-}
-
-legend {
-  font-size: 1.4em;
-  margin-bottom: 10px;
-}
-
-
-
-label.light {
-  font-weight: 300;
-  display: inline;
-}
-
-*/

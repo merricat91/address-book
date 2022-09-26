@@ -31,18 +31,10 @@ function hideReset() {
 $('#cancel').click(function(){
     hideReset()});
 
-// $('#cancel').click(function hideReset() {
-//    document.querySelector("form").reset();
-//    $('form').hide();
-//}
-//);
 
+// Collects form input values and stores them as objects in an array
 
-// Collects form  input values and stores them as objects in an array
-
-const contactArray = [
-
-];
+const contactArray = [];
 
 $('#submitContact').click(function() {
     const newContact = {
@@ -54,8 +46,8 @@ $('#submitContact').click(function() {
     
     contactArray.push(newContact);
 
-// Sort the array alphabetically each time a new contact is added
-// Citation for function compare code: https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+    // Sorts the array alphabetically each time a new contact is added
+    // CITATION for function compare code: https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
 
     function compare( a, b ) {
         if ( a.lastName < b.lastName ){
@@ -69,7 +61,7 @@ $('#submitContact').click(function() {
       
       contactArray.sort( compare );
 
-// Delete and rewrite the array data to the page each time a new contact is added
+    // Delete and rewrite the array data to the page each time a new contact is added
 
     for (let i = 0; i < contactArray.length; i++) {
     
@@ -85,8 +77,7 @@ $('#submitContact').click(function() {
 
         }
 
-       hideReset();
-        
+       hideReset();    
 }
 
 );
@@ -102,6 +93,7 @@ $('ol').on("click", "#deleteContact", function(e){
 );
 
 // Search function
+
 $('#searchButton').click(function () {
     let searchResults = [];
     const search = $('#searchInput').val().toUpperCase();
@@ -117,7 +109,6 @@ $('#searchButton').click(function () {
 
 console.log(searchResults);
 
-// $('#searchDiv').append(`<p>${searchResults[0].firstName}</p>`);
 if(searchResults.length > 0) {
 
     for(let i = 0; i < searchResults.length; i++) {
@@ -130,26 +121,3 @@ else {
 }
 
 )
-  /*
-
-$('#searchButton').click(function () {
-    const search = $('#searchInput').val().toUpperCase();
-
-    if(contactArray.length == 0){alert("No contacts found - your address book is empty");}
-
-    for (let i = 0; i < contactArray.length; i++) {
-
-    if (contactArray[i].firstName.toUpperCase().includes(search)) {
-        alert(`Contact found: ${contactArray[i].firstName} ${contactArray[i].lastName}`);
-        break;
-    } else if (contactArray[i].lastName.toUpperCase().includes(search)){
-        alert(`Contact found: ${contactArray[i].firstName} ${contactArray[i].lastName}`);
-        break;
-    }
-    else {
-        alert('No contacts found.');
-        break;
-    }
-}
-});
-*/
