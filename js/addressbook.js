@@ -103,6 +103,33 @@ $('ol').on("click", "#deleteContact", function(e){
 );
 
 // Search function
+$('#searchButton').click(function () {
+    let searchResults = [];
+    const search = $('#searchInput').val().toUpperCase();
+
+    for (let i = 0; i < contactArray.length; i++) {
+        for(let prop in contactArray[i]) {
+         if (contactArray[i][prop].toUpperCase().includes(search)) {
+             searchResults.push(contactArray[i]);
+                break;
+         }
+    }
+}
+
+console.log(searchResults);
+
+// $('#searchDiv').append(`<p>${searchResults[0].firstName}</p>`);
+if(searchResults.length > 0) {
+
+    for(let i = 0; i < searchResults.length; i++) {
+alert(`Contact found:\n${searchResults[i].firstName} ${searchResults[i].lastName}: ${searchResults[i].phoneNumber}\n${searchResults[i].address}`);
+}}
+else {
+    alert('No contacts found.');
+}
+}
+)
+  /*
 
 $('#searchButton').click(function () {
     const search = $('#searchInput').val().toUpperCase();
@@ -124,3 +151,4 @@ $('#searchButton').click(function () {
     }
 }
 });
+*/
