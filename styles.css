@@ -64,7 +64,16 @@ li.letter {
    color: rgba(0, 0, 0, 0.7);
 }
 
-/* delete  */
+button {
+  background-color: rgb(250, 128, 114, 0.2);
+  border-radius: 4px;
+}
+
+button:hover {
+  color: rgb(236, 235, 228);
+}
+
+
 #deleteContact {
   font-size: 0.5em;
   opacity: 0.5;
@@ -74,7 +83,6 @@ li.letter {
   opacity: 1;
 }
 
-/* form */
 
 form {
     max-width: 350px;
